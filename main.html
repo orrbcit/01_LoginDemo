@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>    
+    <link rel="stylesheet" type="text/css" href="app.css" />
+    <title>Main Page</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+</head>
+<body>
+    <script src="setup_firebase.js"></script>
+
+    <h1 id="banner">  </h1>
+    <h1 id="quote">  </h1>
+    <script src="greeting.js"></script>
+
+    <script src="main.js"></script>
+    <button class="button" onclick="mainApp.logout()"> Log Out </button>
+    <button class="update_profile" onclick="window.location.href='profile.html'"> Update Profile </button>
+    <script src="create_user.js"></script>
+
+</body>
+</html>
+
