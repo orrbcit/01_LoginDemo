@@ -13,11 +13,18 @@
 
     <h1 id="banner">  </h1>
     <h1 id="quote">  </h1>
-    <script src="greeting.js"></script>
+    <script src="greetingQuote.js"></script>
 
-    <script src="main.js"></script>
-    <button class="button" onclick="mainApp.logout()"> Log Out </button>
-    <button class="update_profile" onclick="window.location.href='profile.html'"> Update Profile </button>
+    <script //src="main.js"></script>
+    <button id="btnLogout" class="button"> Log Out </button>
+    <button id="btnUpdateProfile" class="button" onclick="window.location.href='profile.html'"> Update Profile </button>
+    <script>
+	btnLogout.addEventListener("click", function(e) {
+		document.getElementById("quote").innerHTML = "";
+		firebase.auth().signOut();
+	});
+    </script>
+    
     <script src="create_user.js"></script>
 
 </body>
