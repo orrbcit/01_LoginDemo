@@ -15,13 +15,14 @@
     <h1 id="quote">  </h1>
     <script src="greetingQuote.js"></script>
 
-    <script //src="main.js"></script>
     <button id="btnLogout" class="button"> Log Out </button>
     <button id="btnUpdateProfile" class="button" onclick="window.location.href='profile.html'"> Update Profile </button>
     <script>
 	btnLogout.addEventListener("click", function(e) {
-		document.getElementById("quote").innerHTML = "";
-		firebase.auth().signOut();
+		var promise = firebase.auth().signOut();
+        promise.then(function(){
+            window.location.href='index.html';
+        });
 	});
     </script>
     

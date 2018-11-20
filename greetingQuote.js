@@ -6,8 +6,9 @@
     // construct "banner" and "quote" strings
     
     var banner = document.getElementById("banner");
-    var quote = document.getElementById('quote');
-    var username = "";
+    var quote = document.getElementById("quote");
+    var userName = "Hello my friend";
+    var userQuote = "Login to get your quote";
 
     //If the current user is authenticated then
     //	grab userName
@@ -19,15 +20,17 @@
     	if (user){
           	userName=user.displayName;
 	  		//console.log (userName);
-	  		// display quote from database 
+	  		//display quote from database 
 			var dbRef = firebase.database().ref().child('message');
-			dbRef.on('value', snap => quote.innerText = snap.val());
+			dbRef.on('value', function(snap){
+                userQuote = snap.val();
+                quote.innerText = userQuote;
+                banner.innerText = "Hello " + userName;
+            });
     	} else {
-	  		userName="my friend";
-	  		quote.innerText = "";
-    	}
-        banner.innerText = "Hello " + userName;
+                quote.innerText = userQuote;
+                banner.innerText = "Hello " + userName;
+        }        
     });
-
 })();
 
