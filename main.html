@@ -4,28 +4,45 @@
     <meta charset="utf-8"/>    
     <link rel="stylesheet" type="text/css" href="app.css" />
     <title>Main Page</title>
+    <!-- Import firebase and firebase-authenticationUI libraries -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 <body>
+    <!-- Generic setup needed for every page that uses firebase -->
     <script src="setup_firebase.js"></script>
 
+    <!-- Customized banner for authenticated users, with quote from database --> 
     <h1 id="banner">  </h1>
     <h1 id="quote">  </h1>
     <script src="greetingQuote.js"></script>
+<<<<<<< HEAD
 
     <button id="btnLogout" class="button"> Log Out </button>
+=======
+    
+    <!-- Two buttons:  Update Profile, and LogOut -->
+>>>>>>> 958dd5005f2ca7eb7223bd9cef224c79ddac80fb
     <button id="btnUpdateProfile" class="button" onclick="window.location.href='profile.html'"> Update Profile </button>
+    <button id="btnLogout" class="button"> Log Out </button>
     <script>
+<<<<<<< HEAD
 	btnLogout.addEventListener("click", function(e) {
 		var promise = firebase.auth().signOut();
         promise.then(function(){
             window.location.href='index.html';
         });
+=======
+	btnLogout.addEventListener("click", function(e) {          // Logout button listener
+		document.getElementById("quote").innerHTML = "";   // Clear the customized quote
+		firebase.auth().signOut();                         // Firebase Authenticated User Signout
+>>>>>>> 958dd5005f2ca7eb7223bd9cef224c79ddac80fb
 	});
     </script>
     
+    <!-- If we are on this page, that means that the user is authenticated -->
+    <!-- Create our own "User" object, with name and email, add to our own collection of users -->
     <script src="create_user.js"></script>
 
 </body>

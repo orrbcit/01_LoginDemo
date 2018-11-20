@@ -4,18 +4,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="app.css" />
     <title>Landing Page</title>
+    <!-- Import firebase and firebase-authenticationUI libraries -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
 </head>
 <body>
+    <!-- Generic setup needed for every page that uses firebase -->
     <script src="setup_firebase.js"></script>
 
+    <!-- Customized banner for authenticated users, with quote from database --> 
+    <!-- Since no user has logged in yet, a generic banner is given, no quote -->
     <h1 id="banner">  </h1>
     <h1 id="quote">  </h1>
     <script src="greetingQuote.js"></script>
 
+    <!-- Login button that brings user to the Firebase AuthUI window -->
     <h2> Login for Quote </h2>
     <button class="button" type="submit" onclick="window.location.href='login.html'">Login</button>
 
