@@ -1,5 +1,6 @@
 # 01_LoginDemo
 Demo of firebase login
+----------------------
 
 Purpose of the App:  
 Display quote of the day, and personalized greeting to logged in Users. 
